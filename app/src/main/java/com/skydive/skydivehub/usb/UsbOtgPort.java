@@ -150,7 +150,7 @@ public class UsbOtgPort extends CommInterface implements Runnable {
     {
         Log.e(DEBUG_TAG, "Starting receiving thread");
 
-        ByteBuffer buffer = ByteBuffer.allocate(64);
+        ByteBuffer buffer = ByteBuffer.allocate(256);
         UsbRequest request = new UsbRequest();
         request.initialize(connection, usbCdcRead);
 
