@@ -22,6 +22,8 @@ import java.util.HashMap;
 public class UsbOtgPort extends CommInterface implements Runnable {
     private static final String DEBUG_TAG = UsbOtgPort.class.getSimpleName();
 
+    private static final int maxPacketSize = 256;
+
     private UsbManager manager;
 
     private UsbDeviceConnection connection;
@@ -150,7 +152,7 @@ public class UsbOtgPort extends CommInterface implements Runnable {
     {
         Log.e(DEBUG_TAG, "Starting receiving thread");
 
-        ByteBuffer buffer = ByteBuffer.allocate(256);
+        ByteBuffer buffer = ByteBuffer.allocate(maxPacketSize);
         UsbRequest request = new UsbRequest();
         request.initialize(connection, usbCdcRead);
 

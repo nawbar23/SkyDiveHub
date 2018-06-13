@@ -15,8 +15,8 @@ import java.net.Socket;
 public class TcpServer extends CommInterface {
     private static final String DEBUG_TAG = TcpServer.class.getSimpleName();
 
-    private static final int port = 8888;
-    private static final int maxPacketSize = 512;
+    private static final int port = 9999;
+    private static final int maxPacketSize = 256;
 
     private enum State {
         CONNECTING,
